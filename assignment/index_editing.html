@@ -55,49 +55,17 @@
 
       ===================== */
 
-var dentalIcon = L.icon({
-    iconUrl: 'C:/Users/Deonp/Documents/GitHub/OST4GIS-week2/assignment/images/tooth.png'
-});
-
-for (i=0; i < healthCenters.length; i++){
-  console.log(Object.keys(healthCenters[0]));
-    for (i=0; i < healthCenters.length; i++){
-      console.log(Object.values(healthCenters[0]));
-    }
-};
-
-/*
-//Original code
-      for (i=0; i < healthCenters.length; i++){
-        console.log(healthCenters[i]["LAT"],
-        healthCenters[i]["LNG"],
-        healthCenters[i]["OBJECTID"],
-        healthCenters[i]["NAME"],
-        healthCenters[i]["ORGANIZATION"],
-        healthCenters[i]["ZIP"],
-        healthCenters[i]["PHONE"],
-        healthCenters[i]["WEBSITE"],
-        healthCenters[i]["DENTAL_PHONE"],
-        healthCenters[i]["FULL_ADDRESS"]
-        );
-      }
-*/
-      for (i=0; i < healthCenters.length; i++){
-        if (healthCenters[i]["ZIP"] >= 19140 && healthCenters[i]["ZIP"] <= 19149){
-          if (healthCenters[i]["DENTAL_PHONE"] === "N/A"){
-            L.marker([healthCenters[i]["LAT"], healthCenters[i]["LNG"]],{icon: dentalIcon}).addTo(map)
-            .bindPopup(healthCenters[i]["NAME"])
-            .openPopup();
-          } else {
-            L.marker([healthCenters[i]["LAT"], healthCenters[i]["LNG"]]).addTo(map)
-            .bindPopup(healthCenters[i]["NAME"])
-            .openPopup();
-          }
-        }
-      };
+      //task4
 
       var jsonToCsv = function(json) {
+        let healthCenterLocations = [json];
         console.log(json); };
+
+      for (i=0; i < jsonToCsv.length; i++){
+      L.marker([jsonToCsv[i][2], jsonToCsv[i][3]]).addTo(map)
+      .bindPopup(jsonToCsv[i][4], )
+      .openPopup();
+      }
 
       var addMarkers = function(map) {};
 
@@ -106,6 +74,7 @@ for (i=0; i < healthCenters.length; i++){
       End code
 
       ===================== */
+
 
       jsonToCsv(healthCenters);
       addMarkers(map);

@@ -53,7 +53,24 @@
       var yourSum = 0;
 
       // Refactor the work above into a few different functions that are reusable to the extent that you can
-      for (var i = 0; i < theArray.length, i++) { /* Do stuff here */ }
+
+      sumArrayStringLengths = function (words){
+          var arrayValue = theArray[i];
+          if (typeof arrayValue === 'string') {         // String case
+            exampleSum = exampleSum + arrayValue.length;}
+          }
+
+      sumArrayNumbers = function (num) {
+          var arrayValue = theArray[i];
+          if (typeof arrayValue === 'number') {  // Number case
+            exampleSum = exampleSum + arrayValue;}
+        }
+
+
+      for (var i = 0; i < theArray.length; i++) {
+          sumArrayStringLengths();
+          sumArrayNumbers();
+        }
 
       /* =====================
 

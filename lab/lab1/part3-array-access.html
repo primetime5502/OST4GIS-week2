@@ -58,14 +58,61 @@
     }).addTo(map);
 
     /* =====================
-
     Start code
 
-    ===================== */
+//task1
+var restaurantData = [
+restaurantData[0] = [39.9649981, -75.1632647, "Osteria"];
+restaurantData[1] = [39.941804, -75.151747, "Smoke's Poutinerie"];
+restaurantData[2] = [39.9535522, -75.1951373, "White Dog Cafe"];
+];
 
+//task2
+  for (i=0; i < restaurantData.length; i++){
+  L.marker([restaurantData[i][0], restaurantData[i][1]]).addTo(map);
+  }
+
+//task3
+restaurantData.push(39.960273,-75.1708951, "Sabrina's");
+restaurantData.push(39.9527367,-75.1958549,"Beijing Restaurant");
+console.log(restaurantData);
+
+//task4
+  for (i=0; i < restaurantData.length; i++){
+  L.marker([restaurantData[i][0], restaurantData[i][1]]).addTo(map)
+  .bindPopup(restaurantData[i][2])
+  .openPopup();
+  }
+
+    ===================== */
+/*
     L.marker([0, 0]).addTo(map);
     L.marker([0, 0]).addTo(map);
     L.marker([0, 0]).addTo(map);
+*/
+//task1
+var restaurantData = [0,1,2];
+
+restaurantData[0] = [39.9649981, -75.1632647, "Osteria"];
+restaurantData[1] = [39.941804, -75.151747, "Smoke's Poutinerie"];
+restaurantData[2] = [39.9535522, -75.1951373, "White Dog Cafe"];
+
+//task2
+  for (i=0; i < restaurantData.length; i++){
+  L.marker([restaurantData[i][0], restaurantData[i][1]]).addTo(map);
+  }
+
+//task3
+restaurantData.push([39.960273,-75.1708951, "Sabrina's"]);
+restaurantData.push([39.9527367,-75.1958549,"Beijing Restaurant"]);
+console.log(restaurantData);
+
+//task4
+  for (i=0; i < restaurantData.length; i++){
+  L.marker([restaurantData[i][0], restaurantData[i][1]]).addTo(map)
+  .bindPopup(restaurantData[i][2])
+  .openPopup();
+  }
 
     /* =====================
 
